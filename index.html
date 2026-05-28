@@ -135,7 +135,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 /* ===== SERVICES ===== */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.svc{background:transparent;border:1px solid rgba(255,255,255,.06);padding:36px 28px;cursor:pointer;position:relative;overflow:hidden;transition:all .4s var(--ease)}
+.svc{background:transparent;border:1px solid rgba(255,255,255,.06);padding:36px 28px;position:relative;overflow:hidden;transition:all .4s var(--ease);-webkit-user-select:none;user-select:none}
 .svc:hover{border-color:rgba(201,169,110,.25);background:rgba(201,169,110,.03)}
 .svc-icon{width:48px;height:48px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,169,110,.2);border-radius:50%;color:var(--gold);transition:all .4s}
 .svc:hover .svc-icon{background:var(--gold);color:var(--bg);border-color:var(--gold)}
@@ -147,9 +147,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .svc:hover .svc-link{opacity:1}
 @media(max-width:860px){.svc-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){
-.svc-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.svc-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;touch-action:pan-x}
 .svc-grid::-webkit-scrollbar{display:none}
-.svc{flex-shrink:0;width:280px;scroll-snap-align:start}
+.svc{flex-shrink:0;width:280px;scroll-snap-align:start;cursor:default}
+.svc-link{cursor:pointer}
 }
 
 /* ===== RESULTS ===== */
@@ -157,7 +158,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .res-tab{padding:8px 18px;font-size:.75rem;letter-spacing:.06em;border:1px solid rgba(255,255,255,.1);color:var(--gray);background:transparent;transition:all .3s;cursor:pointer}
 .res-tab.on,.res-tab:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
 .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.res-card{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:3/4;background:var(--bg3)}
+.res-card{position:relative;overflow:hidden;aspect-ratio:3/4;background:var(--bg3)}
 .res-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
 .res-card:hover img{transform:scale(1.04)}
 .res-card-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.7) 0%,transparent 40%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:16px}
@@ -166,9 +167,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .res-more{text-align:center;margin-top:36px}
 @media(max-width:860px){.res-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){
-.res-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.res-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;touch-action:pan-x}
 .res-grid::-webkit-scrollbar{display:none}
-.res-card{flex-shrink:0;width:75vw;max-width:300px;scroll-snap-align:start}
+.res-card{flex-shrink:0;width:75vw;max-width:300px;scroll-snap-align:start;cursor:default}
 }
 
 /* ===== FORM ===== */
@@ -209,13 +210,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .vid-card-badge{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
 .vid-card-info p{font-size:.82rem;font-weight:300}
 @media(max-width:600px){
-.vid-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.vid-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;touch-action:pan-x}
 .vid-grid::-webkit-scrollbar{display:none}
 .vid-card{flex-shrink:0;width:260px;scroll-snap-align:start}
 }
 
 /* ===== TEXT REVIEWS ===== */
-.rev-scroll{display:flex;gap:16px;overflow-x:auto;padding:8px 0 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rev-scroll{display:flex;gap:16px;overflow-x:auto;padding:8px 0 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch;touch-action:pan-x}
 .rev-scroll::-webkit-scrollbar{display:none}
 .rev{flex-shrink:0;width:380px;background:var(--bg3);border:1px solid rgba(255,255,255,.04);padding:28px}
 .rev-stars{color:var(--gold);font-size:.85rem;letter-spacing:2px;margin-bottom:14px}
@@ -400,37 +401,37 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <h2 class="sc-title">Что мы делаем</h2>
 </div>
 <div class="svc-grid">
-  <div class="svc" data-reveal onclick="openModal('Липосакция')">
+  <div class="svc" data-reveal data-service="Липосакция">
     <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12s1-4 4-4 4 4 4 4-1 4-4 4-4-4-4-4"/></svg></div>
     <h3>Липосакция</h3>
     <p>Хирургическое удаление жировых отложений. Живот, спина, руки, бёдра, талия. Вариант «360°».</p>
     <div class="svc-link">Записаться &rarr;</div>
   </div>
-  <div class="svc" data-reveal onclick="openModal('Липомоделирование')">
+  <div class="svc" data-reveal data-service="Липомоделирование">
     <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
     <h3>Липомоделирование</h3>
     <p>Липосакция + липофиллинг за одну операцию. Тонкая талия и округлые ягодицы.</p>
     <div class="svc-link">Записаться &rarr;</div>
   </div>
-  <div class="svc" data-reveal onclick="openModal('Липофиллинг ягодиц')">
+  <div class="svc" data-reveal data-service="Липофиллинг ягодиц">
     <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div>
     <h3>Липофиллинг ягодиц</h3>
     <p>Увеличение ягодиц собственным жиром пациентки. Натуральный материал, натуральный результат.</p>
     <div class="svc-link">Записаться &rarr;</div>
   </div>
-  <div class="svc" data-reveal onclick="openModal('Абдоминопластика')">
+  <div class="svc" data-reveal data-service="Абдоминопластика">
     <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18"/></svg></div>
     <h3>Абдоминопластика</h3>
     <p>Операция на животе, включая переделки после других хирургов. Берёмся за сложные случаи.</p>
     <div class="svc-link">Записаться &rarr;</div>
   </div>
-  <div class="svc" data-reveal onclick="openModal('Косметология')">
+  <div class="svc" data-reveal data-service="Косметология">
     <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 110 20 10 10 0 010-20z"/><path d="M12 8v4l2 2"/></svg></div>
     <h3>Косметология</h3>
     <p>Ботокс, филлеры, биоревитализация, плазмолифтинг, мезотерапия, RF-лифтинг.</p>
     <div class="svc-link">Записаться &rarr;</div>
   </div>
-  <div class="svc" data-reveal onclick="openModal('Переделка после другого хирурга')">
+  <div class="svc" data-reveal data-service="Переделка">
     <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div>
     <h3>Переделки</h3>
     <p>Исправляем ошибки других хирургов. Восстановим результат, который должен был быть.</p>
@@ -832,6 +833,28 @@ if(v.paused){v.muted=false;v.play();overlay.style.opacity='0'}else{v.pause();ove
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
 const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
 }));
+
+// Touch-safe service card clicks (no accidental taps during swipe)
+document.querySelectorAll('.svc[data-service]').forEach(card=>{
+let startX,startY,moved;
+card.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;startY=e.touches[0].clientY;moved=false},{passive:true});
+card.addEventListener('touchmove',e=>{
+  const dx=Math.abs(e.touches[0].clientX-startX),dy=Math.abs(e.touches[0].clientY-startY);
+  if(dx>8||dy>8)moved=true;
+},{passive:true});
+card.addEventListener('touchend',()=>{if(!moved)openModal(card.dataset.service)});
+card.addEventListener('click',e=>{if(window.innerWidth>600)openModal(card.dataset.service)});
+});
+
+// Prevent body scroll when touching carousels
+document.querySelectorAll('.svc-grid,.res-grid,.vid-grid,.rev-scroll').forEach(el=>{
+let startX;
+el.addEventListener('touchstart',e=>{startX=e.touches[0].clientX},{passive:true});
+el.addEventListener('touchmove',e=>{
+  const dx=Math.abs(e.touches[0].clientX-startX);
+  if(dx>5)e.stopPropagation();
+},{passive:true});
+});
 </script>
 </body>
 </html>
