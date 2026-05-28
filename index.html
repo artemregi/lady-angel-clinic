@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DR. SARA — Клиника пластической хирургии и косметологии в Алматы</title>
+<meta name="description" content="Клиника Lady Angel — липосакция, липомоделирование, косметология в Алматы. Хирург Dr. Sara: 8 лет опыта, 2000+ операций. Запись на консультацию.">
+<meta name="keywords" content="липосакция Алматы, пластический хирург Алматы, липомоделирование, косметология, Lady Angel, Dr Sara">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0b0b0b;--bg2:#111;--bg3:#171717;--bg4:#1d1d1d;--bg5:#222;
+--gold:#c9a96e;--gold-l:#e0cda3;--gold-dim:rgba(201,169,110,.1);
+--white:#f4f0eb;--white2:#d8d4ce;--gray:#888;--gray2:#555;
+--red:#c44;
+--ff:'Cormorant Garamond',Georgia,serif;
+--fb:'Manrope',system-ui,sans-serif;
+--ease:cubic-bezier(.22,1,.36,1);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);background:var(--bg);color:var(--white);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--gray2);border-radius:3px}
+
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+/* Reveal */
+[data-reveal]{opacity:0;transform:translateY(32px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+[data-reveal].vis{opacity:1;transform:none}
+[data-reveal="left"]{transform:translateX(-32px)}
+[data-reveal="left"].vis{transform:none}
+[data-reveal="right"]{transform:translateX(32px)}
+[data-reveal="right"].vis{transform:none}
+
+/* ===== HEADER ===== */
+.hd{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s,padding .3s,border-color .3s;padding:20px 0;border-bottom:1px solid transparent}
+.hd.scrolled{background:rgba(11,11,11,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:14px 0;border-color:rgba(255,255,255,.05)}
+.hd-inner{display:flex;align-items:center;justify-content:space-between}
+.hd-nav{display:flex;align-items:center;gap:32px}
+.hd-nav a{font-size:.8rem;letter-spacing:.08em;color:var(--gray);transition:color .3s;font-weight:400}
+.hd-nav a:hover{color:var(--white)}
+.hd-logo{font-family:var(--ff);font-size:1.6rem;letter-spacing:.12em;font-weight:400;text-transform:uppercase}
+.hd-logo span{display:block;font-size:.55rem;letter-spacing:.35em;font-weight:300;color:var(--gray);margin-top:-2px;font-family:var(--fb);text-transform:uppercase}
+.hd-right{display:flex;align-items:center;gap:24px}
+.hd-phone{font-size:.82rem;color:var(--gray);letter-spacing:.04em;transition:color .3s}
+.hd-phone:hover{color:var(--gold)}
+.hd-cta{font-size:.78rem;letter-spacing:.08em;padding:10px 22px;border:1px solid rgba(255,255,255,.2);color:var(--white);transition:all .3s}
+.hd-cta:hover{border-color:var(--gold);color:var(--gold)}
+.burger{display:none;width:22px;height:16px;position:relative;z-index:101}
+.burger span{position:absolute;left:0;width:100%;height:1.5px;background:var(--white);transition:all .3s}
+.burger span:nth-child(1){top:0}.burger span:nth-child(2){top:7px}.burger span:nth-child(3){top:14px}
+.burger.on span:nth-child(1){top:7px;transform:rotate(45deg)}.burger.on span:nth-child(2){opacity:0}.burger.on span:nth-child(3){top:7px;transform:rotate(-45deg)}
+.mob-menu{position:fixed;inset:0;background:rgba(11,11,11,.98);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:99}
+.mob-menu.on{opacity:1;pointer-events:auto}
+.mob-menu a{font-family:var(--ff);font-size:1.8rem;font-weight:300;color:var(--white);transition:color .3s}
+.mob-menu a:hover{color:var(--gold)}
+
+@media(max-width:860px){
+.hd-nav,.hd-phone{display:none}
+.burger{display:block}
+}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center center;filter:brightness(.55)}
+.hero-bg .hero-mob{display:none}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,11,.88) 0%,rgba(11,11,11,.6) 40%,rgba(11,11,11,.15) 70%,transparent 100%)}
+.hero-content{position:relative;z-index:1;padding:160px 0 100px;max-width:480px}
+.hero-tag{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;font-weight:400;opacity:0;animation:fu .7s var(--ease) .2s forwards}
+.hero h1{font-family:var(--ff);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:300;line-height:1.15;letter-spacing:.02em;margin-bottom:20px;opacity:0;animation:fu .7s var(--ease) .4s forwards}
+.hero-desc{font-size:.9rem;color:var(--white2);font-weight:300;line-height:1.7;margin-bottom:32px;max-width:400px;opacity:0;animation:fu .7s var(--ease) .6s forwards}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fu .7s var(--ease) .8s forwards}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;font-size:.82rem;letter-spacing:.06em;font-weight:500;transition:all .35s var(--ease);position:relative}
+.btn-w{background:var(--white);color:var(--bg)}
+.btn-w:hover{background:var(--gold);color:var(--bg)}
+.btn-o{border:1px solid rgba(255,255,255,.25);color:var(--white)}
+.btn-o:hover{border-color:var(--gold);color:var(--gold)}
+.btn-g{background:var(--gold);color:var(--bg)}
+.btn-g:hover{background:var(--gold-l)}
+.btn-sm{padding:10px 20px;font-size:.78rem}
+
+@keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+@media(max-width:860px){
+.hero{min-height:100svh;align-items:flex-end}
+.hero-content{padding:0 0 48px;max-width:100%}
+.hero-bg .hero-desk{display:none}
+.hero-bg .hero-mob{display:block}
+.hero-bg img{object-position:center 30%}
+.hero-bg::after{background:linear-gradient(180deg,rgba(11,11,11,.05) 0%,rgba(11,11,11,.25) 35%,rgba(11,11,11,.9) 65%,rgba(11,11,11,.98) 100%)}
+.hero h1{font-size:1.8rem}
+.hero-desc{font-size:.85rem;max-width:100%}
+}
+
+/* ===== STATS ===== */
+.stats{position:relative;overflow:hidden;background:linear-gradient(135deg,#0f0d09 0%,#151210 50%,#0f0d09 100%);padding:56px 0}
+.stats::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.stats::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,.3),transparent)}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{padding:20px;text-align:center;position:relative}
+.stat::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:linear-gradient(180deg,transparent,rgba(201,169,110,.2),transparent)}
+.stat:last-child::after{display:none}
+.stat-num{font-family:var(--ff);font-size:2.6rem;font-weight:300;color:var(--gold);letter-spacing:.02em;line-height:1}
+.stat-label{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--white2);margin-top:8px;font-weight:300}
+@media(max-width:600px){.stats-inner{grid-template-columns:1fr 1fr}.stat{padding:24px 16px}.stat:nth-child(2)::after{display:none}}
+
+/* ===== SECTION COMMON ===== */
+.sc{padding:100px 0}
+.sc-dark{background:var(--bg2)}
+.sc-label{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:12px}
+.sc-title{font-family:var(--ff);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;line-height:1.15;margin-bottom:20px}
+.sc-sub{font-size:.95rem;color:var(--gray);font-weight:300;max-width:560px;line-height:1.7}
+.sc-head{margin-bottom:48px}
+.sc-head.center{text-align:center}.sc-head.center .sc-sub{margin:0 auto}
+
+/* ===== ABOUT ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{position:relative}
+.about-img img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:brightness(.9)}
+.about-img::after{content:'';position:absolute;top:16px;left:16px;right:-16px;bottom:-16px;border:1px solid rgba(201,169,110,.15);pointer-events:none}
+.about-checks{display:flex;flex-direction:column;gap:14px;margin:28px 0 32px}
+.about-chk{display:flex;align-items:center;gap:12px;font-size:.9rem;color:var(--white2);font-weight:300}
+.about-chk::before{content:'';width:18px;height:1px;background:var(--gold);flex-shrink:0}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:36px}.about-img{max-width:420px}}
+
+/* ===== SERVICES ===== */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:transparent;border:1px solid rgba(255,255,255,.06);padding:36px 28px;cursor:pointer;position:relative;overflow:hidden;transition:all .4s var(--ease)}
+.svc:hover{border-color:rgba(201,169,110,.25);background:rgba(201,169,110,.03)}
+.svc-icon{width:48px;height:48px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,169,110,.2);border-radius:50%;color:var(--gold);transition:all .4s}
+.svc:hover .svc-icon{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.svc-icon svg{width:22px;height:22px}
+.svc h3{font-family:var(--ff);font-size:1.35rem;font-weight:400;margin-bottom:10px;transition:color .3s}
+.svc:hover h3{color:var(--gold)}
+.svc p{font-size:.82rem;color:var(--gray);font-weight:300;line-height:1.65;margin-bottom:16px}
+.svc-link{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:6px;opacity:.5;transition:opacity .3s}
+.svc:hover .svc-link{opacity:1}
+@media(max-width:860px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){
+.svc-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.svc-grid::-webkit-scrollbar{display:none}
+.svc{flex-shrink:0;width:280px;scroll-snap-align:start}
+}
+
+/* ===== RESULTS ===== */
+.res-tabs{display:flex;gap:6px;margin-bottom:32px;flex-wrap:wrap}
+.res-tab{padding:8px 18px;font-size:.75rem;letter-spacing:.06em;border:1px solid rgba(255,255,255,.1);color:var(--gray);background:transparent;transition:all .3s;cursor:pointer}
+.res-tab.on,.res-tab:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+.res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.res-card{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:3/4;background:var(--bg3)}
+.res-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.res-card:hover img{transform:scale(1.04)}
+.res-card-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.7) 0%,transparent 40%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:16px}
+.res-card:hover .res-card-overlay{opacity:1}
+.res-card-overlay span{font-size:.8rem;color:var(--white);font-weight:300}
+.res-more{text-align:center;margin-top:36px}
+@media(max-width:860px){.res-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){
+.res-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.res-grid::-webkit-scrollbar{display:none}
+.res-card{flex-shrink:0;width:75vw;max-width:300px;scroll-snap-align:start}
+}
+
+/* ===== FORM ===== */
+.form-section{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:560px}
+.form-visual{position:relative;overflow:hidden}
+.form-visual img{width:100%;height:100%;object-fit:cover;filter:brightness(.5)}
+.form-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,169,110,.15),transparent)}
+.form-panel{background:var(--bg3);padding:60px 48px;display:flex;flex-direction:column;justify-content:center}
+.form-panel .sc-label{margin-bottom:8px}
+.form-panel .sc-title{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px}
+.form-panel .sc-sub{margin-bottom:32px;font-size:.88rem}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:6px;font-weight:400}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;background:var(--bg);border:1px solid rgba(255,255,255,.08);color:var(--white);font-family:var(--fb);font-size:.88rem;font-weight:300;transition:border-color .3s;outline:none;appearance:none;-webkit-appearance:none}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--gray2)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group select{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6' fill='%23888'/%3E%3C/svg%3E") right 16px center/10px no-repeat}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-submit{margin-top:8px}
+.form-submit .btn{width:100%;justify-content:center;padding:16px}
+.form-note{font-size:.7rem;color:var(--gray2);margin-top:12px;line-height:1.5}
+@media(max-width:860px){
+.form-section{grid-template-columns:1fr}.form-visual{min-height:280px}
+.form-panel{padding:40px 24px}.form-row{grid-template-columns:1fr}
+}
+
+/* ===== VIDEO/REVIEWS ===== */
+.vid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vid-card{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:9/16;background:var(--bg3);max-height:480px}
+.vid-card video{width:100%;height:100%;object-fit:cover}
+.vid-card-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);transition:background .3s}
+.vid-card:hover .vid-card-play{background:rgba(0,0,0,.1)}
+.vid-play-btn{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.vid-card:hover .vid-play-btn{background:rgba(201,169,110,.6);transform:scale(1.08)}
+.vid-play-btn svg{width:18px;height:18px;color:var(--white);margin-left:3px}
+.vid-card-info{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.vid-card-badge{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.vid-card-info p{font-size:.82rem;font-weight:300}
+@media(max-width:600px){
+.vid-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.vid-grid::-webkit-scrollbar{display:none}
+.vid-card{flex-shrink:0;width:260px;scroll-snap-align:start}
+}
+
+/* ===== TEXT REVIEWS ===== */
+.rev-scroll{display:flex;gap:16px;overflow-x:auto;padding:8px 0 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rev-scroll::-webkit-scrollbar{display:none}
+.rev{flex-shrink:0;width:380px;background:var(--bg3);border:1px solid rgba(255,255,255,.04);padding:28px}
+.rev-stars{color:var(--gold);font-size:.85rem;letter-spacing:2px;margin-bottom:14px}
+.rev-text{font-size:.88rem;font-weight:300;line-height:1.65;color:var(--white2);font-style:italic;margin-bottom:16px}
+.rev-author{font-size:.72rem;color:var(--gray);letter-spacing:.06em}
+.rev-img{width:100%;margin-top:16px;max-height:200px;object-fit:cover;border-radius:0}
+
+/* ===== PRICES ===== */
+.pr-tabs{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:32px}
+.pr-tab{padding:12px 24px;font-size:.78rem;letter-spacing:.06em;color:var(--gray);border-bottom:2px solid transparent;transition:all .3s;cursor:pointer}
+.pr-tab.on{color:var(--gold);border-color:var(--gold)}
+.pr-panel{display:none}.pr-panel.on{display:block}
+.pr-notice{padding:14px 20px;background:var(--gold-dim);border-left:2px solid var(--gold);font-size:.85rem;color:var(--gold-l);font-weight:300;margin-bottom:24px}
+.pr-table{width:100%;border-collapse:collapse}
+.pr-table tr{border-bottom:1px solid rgba(255,255,255,.04);transition:background .2s}
+.pr-table tr:hover{background:rgba(255,255,255,.02)}
+.pr-table td{padding:16px 0;font-size:.88rem;font-weight:300}
+.pr-table td:nth-child(2){color:var(--gold);font-family:var(--ff);font-size:1.05rem;text-align:right;padding-right:20px;white-space:nowrap}
+.pr-table td:last-child{text-align:right;width:120px}
+.promo{background:linear-gradient(135deg,rgba(201,169,110,.07),rgba(201,169,110,.02));border:1px solid rgba(201,169,110,.12);padding:36px;position:relative}
+.promo-badge{position:absolute;top:14px;right:20px;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;background:var(--red);color:#fff;padding:4px 10px;font-weight:600}
+.promo h3{font-family:var(--ff);font-size:1.6rem;margin-bottom:20px;color:var(--gold);font-weight:300}
+.promo-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(201,169,110,.06)}
+.promo-row:last-of-type{border:none}
+.promo-old{font-size:.82rem;color:var(--gray);text-decoration:line-through;margin-right:14px}
+.promo-new{font-family:var(--ff);font-size:1.05rem;color:var(--gold)}
+@media(max-width:600px){.pr-tabs{overflow-x:auto}.pr-tab{white-space:nowrap;padding:10px 16px}}
+
+/* ===== PROCESS ===== */
+.proc-grid{display:flex;gap:0;position:relative;margin-top:48px}
+.proc-grid::before{content:'';position:absolute;top:28px;left:28px;right:28px;height:1px;background:linear-gradient(90deg,var(--gold),rgba(201,169,110,.15))}
+.proc{flex:1;padding:0 16px;text-align:center;position:relative}
+.proc-dot{width:56px;height:56px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;background:var(--bg);position:relative;z-index:1;transition:all .4s var(--ease)}
+.proc-dot span{font-family:var(--ff);font-size:1.1rem;color:var(--gold);font-weight:400}
+.proc:hover .proc-dot{background:var(--gold);border-color:var(--gold)}
+.proc:hover .proc-dot span{color:var(--bg)}
+.proc h4{font-family:var(--ff);font-size:1.1rem;font-weight:400;margin-bottom:8px;color:var(--white)}
+.proc p{font-size:.78rem;color:var(--gray);font-weight:300;line-height:1.6}
+@media(max-width:860px){.proc-grid{flex-wrap:wrap}.proc{flex:0 0 33.33%;margin-bottom:32px}.proc-grid::before{display:none}}
+@media(max-width:520px){.proc{flex:0 0 50%}}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:720px}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.05)}
+.faq-q{width:100%;text-align:left;padding:20px 0;font-size:.92rem;font-weight:400;color:var(--white);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q:hover{color:var(--gold)}
+.faq-icon{width:20px;height:20px;position:relative;flex-shrink:0}
+.faq-icon::before,.faq-icon::after{content:'';position:absolute;background:var(--gold);transition:transform .3s}
+.faq-icon::before{width:12px;height:1px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.faq-icon::after{width:1px;height:12px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.faq-item.on .faq-icon::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.faq-a-inner{padding:0 0 20px;font-size:.88rem;color:var(--gray);font-weight:300;line-height:1.7}
+
+/* ===== FINAL CTA ===== */
+.cta-final{padding:100px 0;text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,110,.05),transparent 70%)}
+.cta-final .container{position:relative;z-index:1}
+.cta-final .sc-title{max-width:600px;margin:0 auto 12px}
+.cta-final .sc-sub{margin:0 auto 36px;text-align:center}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.cta-phone{font-family:var(--ff);font-size:1.6rem;color:var(--gold);font-weight:300;letter-spacing:.04em}
+
+/* ===== FOOTER ===== */
+.ft{padding:48px 0 28px;border-top:1px solid rgba(255,255,255,.05)}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.ft-brand p{font-size:.82rem;color:var(--gray);font-weight:300;line-height:1.6;margin-top:12px;max-width:280px}
+.ft-col h5{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:500}
+.ft-col ul{display:flex;flex-direction:column;gap:8px}
+.ft-col a{font-size:.82rem;color:var(--gray);font-weight:300;transition:color .3s}
+.ft-col a:hover{color:var(--gold)}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.04);font-size:.72rem;color:var(--gray2);font-weight:300}
+.ft-soc{display:flex;gap:12px}
+.ft-soc a{width:32px;height:32px;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.ft-soc a:hover{border-color:var(--gold)}
+.ft-soc svg{width:14px;height:14px;color:var(--gray)}
+.ft-soc a:hover svg{color:var(--gold)}
+@media(max-width:860px){.ft-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:520px){.ft-grid{grid-template-columns:1fr}.ft-bot{flex-direction:column;gap:12px;text-align:center}}
+
+/* ===== FLOATING WA ===== */
+.fl-wa{position:fixed;bottom:24px;right:24px;z-index:98;width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(201,169,110,.3);transition:transform .3s,box-shadow .3s}
+.fl-wa:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(201,169,110,.4)}
+.fl-wa svg{width:24px;height:24px;color:var(--bg)}
+
+/* ===== MODAL ===== */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;padding:24px}
+.modal-overlay.on{opacity:1;pointer-events:auto}
+.modal{background:var(--bg3);max-width:480px;width:100%;padding:40px;position:relative;transform:translateY(20px);transition:transform .3s var(--ease)}
+.modal-overlay.on .modal{transform:none}
+.modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:1.2rem;cursor:pointer;transition:color .2s}
+.modal-close:hover{color:var(--white)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hd" id="hd">
+<div class="container hd-inner">
+  <div class="hd-nav">
+    <a href="#about">О клинике</a>
+    <a href="#results">Работы</a>
+    <a href="#services">Услуги</a>
+    <a href="#prices">Цены</a>
+  </div>
+  <a href="#" class="hd-logo">DR. SARA<span>Клиника пластической хирургии</span></a>
+  <div class="hd-right">
+    <a href="tel:+77472391520" class="hd-phone">+7 747 239 15 20</a>
+    <button class="hd-cta" onclick="openModal()">Оставить заявку</button>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</div>
+</header>
+<div class="mob-menu" id="mobMenu">
+  <a href="#about" data-mob>О клинике</a>
+  <a href="#results" data-mob>Работы</a>
+  <a href="#services" data-mob>Услуги</a>
+  <a href="#prices" data-mob>Цены</a>
+  <a href="#reviews" data-mob>Отзывы</a>
+  <a href="#contact" data-mob>Контакты</a>
+  <a href="#" onclick="openModal();closeMob();return false" style="color:var(--gold)">Оставить заявку</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="пк.png" alt="Интерьер клиники Lady Angel — пластическая хирургия в Алматы" class="hero-desk" loading="eager">
+    <img src="мобилка.png" alt="Интерьер клиники Lady Angel" class="hero-mob" loading="eager">
+  </div>
+  <div class="container hero-content">
+    <div class="hero-tag">Lady Angel esthetic clinic</div>
+    <h1>Клиника пластической хирургии и косметологии в Алматы</h1>
+    <p class="hero-desc">Большой опыт работы. Более 2 000 проведённых операций. Индивидуально и комплексно подходим к решению вашей проблемы. Запишитесь на консультацию.</p>
+    <div class="hero-btns">
+      <button class="btn btn-w" onclick="openModal()">Оставить заявку</button>
+      <a href="#results" class="btn btn-o">Смотреть работы</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+<div class="container">
+<div class="stats-inner">
+  <div class="stat"><div class="stat-num" data-count="2000">0+</div><div class="stat-label">Довольных пациенток</div></div>
+  <div class="stat"><div class="stat-num" data-count="8">0</div><div class="stat-label">Лет практики</div></div>
+  <div class="stat"><div class="stat-num" data-count="98">0%</div><div class="stat-label">Рекомендуют нас</div></div>
+  <div class="stat"><div class="stat-num" data-count="0" data-text="24/7">—</div><div class="stat-label">Поддержка после операции</div></div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="sc" id="about">
+<div class="container">
+<div class="about-grid">
+  <div class="about-img" data-reveal="left">
+    <img src="media/Сара_лицо.jpg" alt="Dr. Sara Алипашаевна" loading="lazy">
+  </div>
+  <div data-reveal="right">
+    <div class="sc-label">О враче</div>
+    <h2 class="sc-title">Сара Алипашаевна</h2>
+    <p class="sc-sub">Основатель клиники Lady Angel, лицензированный хирург с авторской техникой коррекции тела. За 8 лет практики — более 2 000 успешных операций. Клиентки приезжают из Алматы, других городов Казахстана и России.</p>
+    <div class="about-checks">
+      <div class="about-chk">Хирург с государственной лицензией</div>
+      <div class="about-chk">Авторская техника липосакции и липомоделирования</div>
+      <div class="about-chk">Анестезиолог-реаниматолог в штате клиники</div>
+      <div class="about-chk">Работает с переделками после других хирургов</div>
+      <div class="about-chk">Полное сопровождение от консультации до восстановления</div>
+    </div>
+    <button class="btn btn-g" onclick="openModal()">Записаться к Dr. Sara</button>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="sc sc-dark" id="services">
+<div class="container">
+<div class="sc-head" data-reveal>
+  <div class="sc-label">Услуги</div>
+  <h2 class="sc-title">Что мы делаем</h2>
+</div>
+<div class="svc-grid">
+  <div class="svc" data-reveal onclick="openModal('Липосакция')">
+    <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12s1-4 4-4 4 4 4 4-1 4-4 4-4-4-4-4"/></svg></div>
+    <h3>Липосакция</h3>
+    <p>Хирургическое удаление жировых отложений. Живот, спина, руки, бёдра, талия. Вариант «360°».</p>
+    <div class="svc-link">Записаться &rarr;</div>
+  </div>
+  <div class="svc" data-reveal onclick="openModal('Липомоделирование')">
+    <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+    <h3>Липомоделирование</h3>
+    <p>Липосакция + липофиллинг за одну операцию. Тонкая талия и округлые ягодицы.</p>
+    <div class="svc-link">Записаться &rarr;</div>
+  </div>
+  <div class="svc" data-reveal onclick="openModal('Липофиллинг ягодиц')">
+    <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div>
+    <h3>Липофиллинг ягодиц</h3>
+    <p>Увеличение ягодиц собственным жиром пациентки. Натуральный материал, натуральный результат.</p>
+    <div class="svc-link">Записаться &rarr;</div>
+  </div>
+  <div class="svc" data-reveal onclick="openModal('Абдоминопластика')">
+    <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18"/></svg></div>
+    <h3>Абдоминопластика</h3>
+    <p>Операция на животе, включая переделки после других хирургов. Берёмся за сложные случаи.</p>
+    <div class="svc-link">Записаться &rarr;</div>
+  </div>
+  <div class="svc" data-reveal onclick="openModal('Косметология')">
+    <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 110 20 10 10 0 010-20z"/><path d="M12 8v4l2 2"/></svg></div>
+    <h3>Косметология</h3>
+    <p>Ботокс, филлеры, биоревитализация, плазмолифтинг, мезотерапия, RF-лифтинг.</p>
+    <div class="svc-link">Записаться &rarr;</div>
+  </div>
+  <div class="svc" data-reveal onclick="openModal('Переделка после другого хирурга')">
+    <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div>
+    <h3>Переделки</h3>
+    <p>Исправляем ошибки других хирургов. Восстановим результат, который должен был быть.</p>
+    <div class="svc-link">Записаться &rarr;</div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- RESULTS -->
+<section class="sc" id="results">
+<div class="container">
+<div class="sc-head" data-reveal>
+  <div class="sc-label">Портфолио</div>
+  <h2 class="sc-title">Наши работы</h2>
+  <p class="sc-sub">Реальные результаты наших пациенток. Все фото — с их согласия.</p>
+</div>
+<div class="res-grid">
+  <!-- Post 3903317 — Липомоделирование: талия+ягодицы -->
+  <div class="res-card" data-reveal>
+    <img src="media/dr.sara_t_3903317564611203504/dr.sara_t_3903317564611203504.png" alt="Липомоделирование — талия и ягодицы, до/после" loading="lazy">
+    <div class="res-card-overlay"><span>Липомоделирование — талия + ягодицы</span></div>
+  </div>
+  <!-- Post 3903317 — Живот+ягодицы сбоку -->
+  <div class="res-card" data-reveal>
+    <img src="media/dr.sara_t_3903317564611203504/dr.sara_t_3903317565441817528.png" alt="Липомоделирование — живот, вид сбоку" loading="lazy">
+    <div class="res-card-overlay"><span>Липомоделирование — живот, вид сбоку</span></div>
+  </div>
+  <!-- Post 3856227 — Результат через 30 дней, спереди -->
+  <div class="res-card" data-reveal>
+    <img src="media/dr.sara_t_3856227255949468300/dr.sara_t_3856227255949468300.png" alt="Результат через 30 дней — живот, спереди" loading="lazy">
+    <div class="res-card-overlay"><span>Результат через 30 дней — спереди</span></div>
+  </div>
+  <!-- Post 3856227 — Результат через 30 дней, сбоку -->
+  <div class="res-card" data-reveal>
+    <img src="media/dr.sara_t_3856227255949468300/dr.sara_t_3856227256905790204.png" alt="Результат через 30 дней — сбоку" loading="lazy">
+    <div class="res-card-overlay"><span>Результат через 30 дней — сбоку</span></div>
+  </div>
+  <!-- Post 3894619 — Результат на следующий день, сзади -->
+  <div class="res-card" data-reveal>
+    <img src="media/dr.sara_t_3894619738383086187/dr.sara_t_3894619738383086187.png" alt="Липомоделирование — результат на следующий день" loading="lazy">
+    <div class="res-card-overlay"><span>Результат на следующий день — сзади</span></div>
+  </div>
+  <!-- Post 3874247 — Через 2 недели, ягодицы -->
+  <div class="res-card" data-reveal>
+    <img src="media/dr.sara_t_3874247609800256890/dr.sara_t_3874247609800256890.png" alt="Липомоделирование через 2 недели — ягодицы" loading="lazy">
+    <div class="res-card-overlay"><span>Через 2 недели — ягодицы</span></div>
+  </div>
+  <!-- Post 3874247 — Через 2 недели, спереди -->
+  <div class="res-card" data-reveal>
+    <img src="media/dr.sara_t_3874247609800256890/dr.sara_t_3874247611930927773.png" alt="Липомоделирование через 2 недели — спереди" loading="lazy">
+    <div class="res-card-overlay"><span>Через 2 недели — спереди</span></div>
+  </div>
+  <!-- Post 3874247 — Через 2 недели, руки+спина -->
+  <div class="res-card" data-reveal>
+    <img src="media/dr.sara_t_3874247609800256890/dr.sara_t_3874247614925675446.png" alt="Коррекция рук и спины — через 2 недели" loading="lazy">
+    <div class="res-card-overlay"><span>Коррекция рук и спины</span></div>
+  </div>
+</div>
+<div class="res-more" data-reveal>
+  <a href="https://instagram.com/dr.sara.results" class="btn btn-o" target="_blank" rel="noopener">Все работы в Instagram &rarr;</a>
+</div>
+</div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="booking">
+  <div class="form-visual">
+    <img src="media/dr.sara_t_3856227255949468300/dr.sara_t_3856227256905790204.png" alt="Результат работы Dr. Sara" loading="lazy">
+  </div>
+  <div class="form-panel">
+    <div class="sc-label">Запись</div>
+    <h2 class="sc-title">Запишитесь на консультацию</h2>
+    <p class="sc-sub">Оставьте заявку — мы свяжемся с вами в течение 15 минут и подберём удобное время.</p>
+    <form id="bookingForm" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div class="form-group"><label>Имя</label><input type="text" name="name" placeholder="Ваше имя" required></div>
+        <div class="form-group"><label>Телефон</label><input type="tel" name="phone" placeholder="+7 (___) ___ __ __" required></div>
+      </div>
+      <div class="form-group">
+        <label>Интересующая услуга</label>
+        <select name="service">
+          <option value="">Выберите услугу</option>
+          <option>Липосакция</option>
+          <option>Липомоделирование</option>
+          <option>Липофиллинг ягодиц</option>
+          <option>Абдоминопластика</option>
+          <option>Ботокс</option>
+          <option>Увеличение губ</option>
+          <option>Биоревитализация</option>
+          <option>Плазмолифтинг</option>
+          <option>RF-лифтинг</option>
+          <option>Переделка после другого хирурга</option>
+          <option>Другое / Консультация</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Комментарий</label><textarea name="message" placeholder="Опишите вашу ситуацию или задайте вопрос"></textarea></div>
+      <div class="form-submit"><button type="submit" class="btn btn-g">Записаться на консультацию</button></div>
+      <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Консультация бесплатная.</p>
+    </form>
+  </div>
+</section>
+
+<!-- VIDEO REVIEWS -->
+<section class="sc" id="reviews">
+<div class="container">
+<div class="sc-head" data-reveal>
+  <div class="sc-label">Отзывы</div>
+  <h2 class="sc-title">Говорят пациентки</h2>
+</div>
+<div class="vid-grid" data-reveal>
+  <!-- Video 1 -->
+  <div class="vid-card" onclick="playVid(this)">
+    <video src="media/dr.sara_t_3747329418180989768/dr.sara_t_3747326909869733512.mp4" preload="metadata" playsinline muted loop></video>
+    <div class="vid-card-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+    <div class="vid-card-info"><div class="vid-card-badge">Видео-отзыв</div><p>Пациентка о своём опыте</p></div>
+  </div>
+  <!-- Video 2 -->
+  <div class="vid-card" onclick="playVid(this)">
+    <video src="media/dr.sara_t_3747329418180989768/dr.sara_t_3747327013989171862.mp4" preload="metadata" playsinline muted loop></video>
+    <div class="vid-card-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+    <div class="vid-card-info"><div class="vid-card-badge">Видео-отзыв</div><p>Результат липомоделирования</p></div>
+  </div>
+  <!-- Video 3 -->
+  <div class="vid-card" onclick="playVid(this)">
+    <video src="media/dr.sara_t_3747329418180989768/dr.sara_t_3747327063616185140.mp4" preload="metadata" playsinline muted loop></video>
+    <div class="vid-card-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+    <div class="vid-card-info"><div class="vid-card-badge">Видео-отзыв</div><p>Эмоции после операции</p></div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- TEXT REVIEWS -->
+<section class="sc sc-dark">
+<div class="container">
+<div class="sc-head" data-reveal><h2 class="sc-title">Отзывы пациенток</h2></div>
+<div class="rev-scroll">
+  <div class="rev">
+    <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <p class="rev-text">Доктор Сара — Доктор с большой буквы, действительно творит чудеса. Я благодарна за новую жизнь. В клинике очень красиво, весь персонал отзывчивые девочки.</p>
+    <div class="rev-author">Пациентка &bull; 27 июля 2025</div>
+    <img src="media/dr.sara_t_3747329418180989768/dr.sara_t_3747329418172593593.png" alt="Отзыв пациентки" class="rev-img" loading="lazy">
+  </div>
+  <div class="rev">
+    <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <p class="rev-text">Я очень долго шла к этому решению, долгих 5 лет. Знакомство с доктором Сарой придало уверенность. Если решили — не сомневайтесь, это лучшее что произошло в моей жизни.</p>
+    <div class="rev-author">Пациентка &bull; 1 октября 2025</div>
+    <img src="media/dr.sara_t_3747329418180989768/dr.sara_t_3747329418180966038.png" alt="Отзыв пациентки" class="rev-img" loading="lazy">
+  </div>
+  <div class="rev">
+    <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <p class="rev-text">Клинику выбирала долго и тщательно. Именно эта мне сразу приглянулась. Операция прошла безболезненно. За месяц минус 9кг! Огромное спасибо Lady Angel!</p>
+    <div class="rev-author">Пациентка</div>
+    <img src="media/dr.sara_t_3747329418180989768/dr.sara_t_3747329418180984014.png" alt="Отзыв пациентки" class="rev-img" loading="lazy">
+  </div>
+  <div class="rev">
+    <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <p class="rev-text">Со мной сможешь! Результат превзошёл все ожидания. Dr. Sara — настоящий профессионал, золотые руки и чуткое сердце.</p>
+    <div class="rev-author">Пациентка из Астаны</div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section class="sc" id="process">
+<div class="container">
+<div class="sc-head" data-reveal>
+  <div class="sc-label">Как это работает</div>
+  <h2 class="sc-title">Путь к результату</h2>
+</div>
+<div class="proc-grid" data-reveal>
+  <div class="proc"><div class="proc-dot"><span>01</span></div><h4>Консультация</h4><p>Бесплатная консультация. Dr. Sara изучит зону и подберёт метод.</p></div>
+  <div class="proc"><div class="proc-dot"><span>02</span></div><h4>Подготовка</h4><p>Простой список анализов. Анестезиолог встретится с вами лично.</p></div>
+  <div class="proc"><div class="proc-dot"><span>03</span></div><h4>Операция</h4><p>Лицензированная операционная. Индивидуальная анестезия. 1,5–3 часа.</p></div>
+  <div class="proc"><div class="proc-dot"><span>04</span></div><h4>День после</h4><p>Первый результат виден через 24 часа. Детальные инструкции.</p></div>
+  <div class="proc"><div class="proc-dot"><span>05</span></div><h4>Результат</h4><p>Финальный результат через 1–3 месяца. Полное сопровождение.</p></div>
+</div>
+</div>
+</section>
+
+<!-- PRICES -->
+<section class="sc sc-dark" id="prices">
+<div class="container">
+<div class="sc-head" data-reveal>
+  <div class="sc-label">Прайс-лист</div>
+  <h2 class="sc-title">Стоимость услуг</h2>
+</div>
+<div class="pr-tabs" data-reveal>
+  <button class="pr-tab on" data-pt="surg">Хирургия</button>
+  <button class="pr-tab" data-pt="cosm">Косметология</button>
+  <button class="pr-tab" data-pt="hw">Аппаратная</button>
+  <button class="pr-tab" data-pt="sale">Акции</button>
+</div>
+<div class="pr-panel on" id="p-surg">
+  <div class="pr-notice">Точная стоимость определяется на консультации — зависит от зон и объёма</div>
+  <table class="pr-table">
+    <tr><td>Липосакция (1 зона)</td><td>от 200 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Липосакция')">Записаться</button></td></tr>
+    <tr><td>Липосакция 360°</td><td>от 350 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Липосакция 360')">Записаться</button></td></tr>
+    <tr><td>Липомоделирование</td><td>от 400 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Липомоделирование')">Записаться</button></td></tr>
+    <tr><td>Липофиллинг ягодиц</td><td>от 300 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Липофиллинг ягодиц')">Записаться</button></td></tr>
+    <tr><td>Абдоминопластика</td><td>от 500 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Абдоминопластика')">Записаться</button></td></tr>
+  </table>
+</div>
+<div class="pr-panel" id="p-cosm">
+  <table class="pr-table">
+    <tr><td>Ботокс (5 зон)</td><td>80 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Ботокс')">Записаться</button></td></tr>
+    <tr><td>Увеличение губ (1 мл)</td><td>70 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Увеличение губ')">Записаться</button></td></tr>
+    <tr><td>Биоревитализация лица</td><td>от 30 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Биоревитализация')">Записаться</button></td></tr>
+    <tr><td>Плазмолифтинг (курс 10)</td><td>90 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Плазмолифтинг')">Записаться</button></td></tr>
+    <tr><td>Плазмолифтинг (1 процедура)</td><td>15 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Плазмолифтинг')">Записаться</button></td></tr>
+    <tr><td>Мезотерапия лица</td><td>20 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Мезотерапия')">Записаться</button></td></tr>
+  </table>
+</div>
+<div class="pr-panel" id="p-hw">
+  <table class="pr-table">
+    <tr><td>RF-лифтинг лица и шеи</td><td>15 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('RF-лифтинг')">Записаться</button></td></tr>
+    <tr><td>Микроигольчатый RF лица и шеи</td><td>25 000 &#8376;</td><td><button class="btn btn-o btn-sm" onclick="openModal('Микроигольчатый RF')">Записаться</button></td></tr>
+  </table>
+</div>
+<div class="pr-panel" id="p-sale">
+  <div class="promo">
+    <div class="promo-badge">Акция</div>
+    <h3>Специальные цены</h3>
+    <div class="promo-row"><span>Ботокс (5 зон)</span><div><span class="promo-old">80 000 &#8376;</span><span class="promo-new">75 000 &#8376;</span></div></div>
+    <div class="promo-row"><span>Увеличение губ (1 мл)</span><div><span class="promo-old">70 000 &#8376;</span><span class="promo-new">50 000 &#8376;</span></div></div>
+    <div class="promo-row"><span>Плазмолифтинг (1 процедура)</span><div><span class="promo-old">15 000 &#8376;</span><span class="promo-new">5 000 &#8376;</span></div></div>
+    <div style="margin-top:24px"><button class="btn btn-g" onclick="openModal('Акционный пакет')">Записаться по акции</button></div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="sc" id="faq">
+<div class="container">
+<div class="sc-head" data-reveal>
+  <div class="sc-label">Вопросы</div>
+  <h2 class="sc-title">Частые вопросы</h2>
+</div>
+<div class="faq-list" data-reveal>
+  <div class="faq-item"><button class="faq-q">Больно ли делать липосакцию?<div class="faq-icon"></div></button><div class="faq-a"><div class="faq-a-inner">Операция проводится под анестезией — вы ничего не чувствуете. После — умеренный дискомфорт 2–5 дней, который контролируется обезболивающими.</div></div></div>
+  <div class="faq-item"><button class="faq-q">Как долго длится реабилитация?<div class="faq-icon"></div></button><div class="faq-a"><div class="faq-a-inner">К привычной жизни — через 5–7 дней. Финальный результат — через 1–3 месяца. Dr. Sara сопровождает вас весь период.</div></div></div>
+  <div class="faq-item"><button class="faq-q">Мне больше 45 лет — можно?<div class="faq-icon"></div></button><div class="faq-a"><div class="faq-a-inner">Да. Возраст — не противопоказание. Мы успешно оперируем пациенток за 50. Главное — состояние здоровья, которое оценивается на консультации.</div></div></div>
+  <div class="faq-item"><button class="faq-q">Сколько стоит операция?<div class="faq-icon"></div></button><div class="faq-a"><div class="faq-a-inner">От 200 000 &#8376; за одну зону до 500 000 &#8376;+ за комплексную коррекцию. Точную стоимость Dr. Sara определит на бесплатной консультации.</div></div></div>
+  <div class="faq-item"><button class="faq-q">Насколько это безопасно?<div class="faq-icon"></div></button><div class="faq-a"><div class="faq-a-inner">Анестезиолог-реаниматолог в штате. Лицензированная операционная. Государственная лицензия хирурга. Более 2 000 успешных операций.</div></div></div>
+  <div class="faq-item"><button class="faq-q">Можно исправить неудачную операцию?<div class="faq-icon"></div></button><div class="faq-a"><div class="faq-a-inner">Да, Dr. Sara берётся за переделки. Запишитесь на консультацию — доктор оценит ситуацию и предложит план коррекции.</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-final" id="contact">
+<div class="container">
+  <div class="sc-label" style="justify-content:center;display:flex" data-reveal>Запись</div>
+  <h2 class="sc-title" data-reveal>Готовы к переменам?</h2>
+  <p class="sc-sub" data-reveal>Запишитесь на бесплатную консультацию. Мы ответим в течение 15 минут.</p>
+  <div class="cta-btns" data-reveal>
+    <button class="btn btn-g" onclick="openModal()">Оставить заявку</button>
+    <a href="https://wa.me/77472391520?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E" class="btn btn-o" target="_blank">Написать в WhatsApp</a>
+  </div>
+  <a href="tel:+77472391520" class="cta-phone" data-reveal>+7 747 239 15 20</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft">
+<div class="container">
+<div class="ft-grid">
+  <div class="ft-brand">
+    <div class="hd-logo" style="font-size:1.3rem">DR. SARA<span>Клиника пластической хирургии</span></div>
+    <p>Где профессионализм встречается с эстетикой, а забота становится искусством.</p>
+  </div>
+  <div class="ft-col"><h5>Навигация</h5><ul>
+    <li><a href="#about">О враче</a></li><li><a href="#services">Услуги</a></li><li><a href="#results">Работы</a></li><li><a href="#prices">Цены</a></li><li><a href="#reviews">Отзывы</a></li>
+  </ul></div>
+  <div class="ft-col"><h5>Услуги</h5><ul>
+    <li><a href="#services">Липосакция</a></li><li><a href="#services">Липомоделирование</a></li><li><a href="#services">Липофиллинг</a></li><li><a href="#services">Абдоминопластика</a></li><li><a href="#prices">Косметология</a></li>
+  </ul></div>
+  <div class="ft-col"><h5>Контакты</h5><ul>
+    <li><a href="tel:+77472391520">+7 747 239 15 20</a></li>
+    <li><a href="https://wa.me/77472391520" target="_blank">WhatsApp</a></li>
+    <li><a href="https://instagram.com/dr.sara_t" target="_blank">@dr.sara_t</a></li>
+    <li>г. Алматы, ул. Зенкова 59, 3 этаж</li>
+  </ul></div>
+</div>
+<div class="ft-bot">
+  <span>&copy; 2024 Lady Angel Esthetic Clinic. Все права защищены.</span>
+  <div class="ft-soc">
+    <a href="https://instagram.com/dr.sara_t" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+    <a href="https://wa.me/77472391520" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  </div>
+</div>
+</div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/77472391520?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!" class="fl-wa" target="_blank" aria-label="WhatsApp">
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+<div class="modal">
+  <div class="modal-close" onclick="closeModal()">&times;</div>
+  <div class="sc-label">Запись</div>
+  <h3 class="sc-title" style="font-size:1.6rem;margin-bottom:6px">Оставить заявку</h3>
+  <p class="sc-sub" style="font-size:.85rem;margin-bottom:24px">Мы перезвоним в течение 15 минут</p>
+  <form id="modalForm" onsubmit="submitForm(event)">
+    <div class="form-group"><label>Имя</label><input type="text" name="name" placeholder="Ваше имя" required></div>
+    <div class="form-group"><label>Телефон</label><input type="tel" name="phone" placeholder="+7 (___) ___ __ __" required></div>
+    <div class="form-group">
+      <label>Услуга</label>
+      <select name="service" id="modalService">
+        <option value="">Выберите услугу</option>
+        <option>Липосакция</option>
+        <option>Липомоделирование</option>
+        <option>Липофиллинг ягодиц</option>
+        <option>Абдоминопластика</option>
+        <option>Ботокс</option>
+        <option>Увеличение губ</option>
+        <option>Биоревитализация</option>
+        <option>Плазмолифтинг</option>
+        <option>RF-лифтинг</option>
+        <option>Переделка</option>
+        <option>Консультация</option>
+      </select>
+    </div>
+    <div class="form-submit"><button type="submit" class="btn btn-g" style="width:100%;justify-content:center">Записаться</button></div>
+    <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+  </form>
+</div>
+</div>
+
+<script>
+// Header scroll
+const hd=document.getElementById('hd');
+window.addEventListener('scroll',()=>hd.classList.toggle('scrolled',scrollY>50),{passive:true});
+
+// Mobile menu
+const burger=document.getElementById('burger'),mob=document.getElementById('mobMenu');
+burger.onclick=()=>{burger.classList.toggle('on');mob.classList.toggle('on');document.body.style.overflow=mob.classList.contains('on')?'hidden':''};
+function closeMob(){burger.classList.remove('on');mob.classList.remove('on');document.body.style.overflow=''}
+document.querySelectorAll('[data-mob]').forEach(a=>a.addEventListener('click',closeMob));
+
+// Reveal
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}}),{threshold:.1,rootMargin:'0px 0px -30px'});
+document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
+
+// Counter
+const cobs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){const el=x.target,t=parseInt(el.dataset.count),txt=el.dataset.text;
+if(txt){el.textContent=txt;cobs.unobserve(el);return}
+if(!t){cobs.unobserve(el);return}
+let c=0;const inc=t/50;
+const suf=t>=2000?'+':t===98?'%':'';
+const iv=setInterval(()=>{c+=inc;if(c>=t){el.textContent=t.toLocaleString('ru')+suf;clearInterval(iv)}else el.textContent=Math.floor(c).toLocaleString('ru')+suf},20);
+cobs.unobserve(el)}}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cobs.observe(el));
+
+// Price tabs
+document.querySelectorAll('.pr-tab').forEach(t=>t.onclick=()=>{
+document.querySelectorAll('.pr-tab').forEach(x=>x.classList.remove('on'));
+document.querySelectorAll('.pr-panel').forEach(x=>x.classList.remove('on'));
+t.classList.add('on');document.getElementById('p-'+t.dataset.pt).classList.add('on');
+});
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(b=>b.onclick=()=>{
+const it=b.parentElement,a=it.querySelector('.faq-a'),isOn=it.classList.contains('on');
+document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('on');i.querySelector('.faq-a').style.maxHeight=null});
+if(!isOn){it.classList.add('on');a.style.maxHeight=a.scrollHeight+'px'}
+});
+
+// Modal
+function openModal(service){
+const ov=document.getElementById('modalOverlay');ov.classList.add('on');document.body.style.overflow='hidden';
+if(service){const sel=document.getElementById('modalService');for(let o of sel.options)if(o.text.includes(service)){sel.value=o.value;break}}
+}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('on');document.body.style.overflow=''}
+
+// Form submit → WhatsApp
+function submitForm(e){
+e.preventDefault();const f=e.target,d=new FormData(f);
+const name=d.get('name')||'',phone=d.get('phone')||'',service=d.get('service')||'Консультация',msg=d.get('message')||'';
+let text=`Здравствуйте! Меня зовут ${name}.\nТелефон: ${phone}\nИнтересует: ${service}`;
+if(msg)text+=`\nКомментарий: ${msg}`;
+window.open('https://wa.me/77472391520?text='+encodeURIComponent(text),'_blank');
+closeModal();f.reset();
+}
+
+// Video play
+function playVid(card){
+const v=card.querySelector('video'),overlay=card.querySelector('.vid-card-play');
+if(v.paused){v.muted=false;v.play();overlay.style.opacity='0'}else{v.pause();overlay.style.opacity='1'}
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+}));
+</script>
+</body>
+</html>
